@@ -11,7 +11,7 @@ const productsRoute = Router();
 productsRoute.get("/products", async (req, res) => {
   const allProducts = await ProductModel.find();
   if (!allProducts) res.json([]);
-  res.json(allProducts);
+  res.json({ message: "Here are your all product", data: allProducts });
 });
 
 productsRoute.get("/products/:id", async (req, res) => {

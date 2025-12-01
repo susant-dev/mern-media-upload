@@ -23,7 +23,7 @@ function UploadImageForm() {
   }, []);
 
   useEffect(() => {
-    if (!data.product) return;
+    if (!data?.product) return;
     alert(
       `Successfully uploaded new image for product with id ${data.product._id}`
     );
