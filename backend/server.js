@@ -6,8 +6,8 @@ const connectDB = require("./src/shared/middlewares/connect-db");
 
 const server = express();
 
-const port = process.env.SERVER_PORT;
-const hostname = process.env.SERVER_HOST;
+const port = process.env.SERVER_PORT || 3000;
+const hostname = process.env.SERVER_HOST || "localhost";
 
 server.use(cors());
 

@@ -3,6 +3,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../shared/Button";
 import useApi from "../shared/useApi";
+import { API_URL } from "../../app-env";
 
 function AddProductForm() {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ function AddProductForm() {
   });
 
   const { loading, data, error, formError, refetch } = useApi(
-    "http://localhost:3000/products",
+    `${API_URL}/products`,
     {
       method: "POST",
       headers: {

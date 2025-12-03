@@ -1,8 +1,9 @@
+import { API_URL } from "../../app-env";
 import useApi from "../shared/useApi";
 import ProductItem from "./ProductItem";
 
 function ProductList() {
-  const { loading, data, error } = useApi("http://localhost:3000/products", {
+  const { loading, data, error } = useApi(`${API_URL}/products`, {
     method: "GET",
   });
 

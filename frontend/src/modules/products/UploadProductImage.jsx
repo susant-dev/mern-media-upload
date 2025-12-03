@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Button from "../shared/Button";
 import useApi from "../shared/useApi";
+import { API_URL } from "../../app-env";
 
 function UploadImageForm() {
   const { productID } = useParams();
@@ -13,7 +14,7 @@ function UploadImageForm() {
   const [preview, setPreview] = useState(null); // preview before upload
 
   const { loading, data, error, refetch } = useApi(
-    "http://localhost:3000/products-image",
+    `${API_URL}/products-image`,
     { method: "POST" },
     { auto: false }
   );
