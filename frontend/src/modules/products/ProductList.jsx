@@ -11,7 +11,7 @@ function ProductList() {
   if (error) return <p className="error">error</p>;
   return (
     <div id="product-container">
-      {data?.map((product) => (
+      {data?.data.map((product) => (
         <ProductItem key={product._id} product={product} />
       ))}
     </div>
