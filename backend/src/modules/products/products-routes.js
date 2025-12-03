@@ -43,8 +43,6 @@ productsRoute.post(
   "/products-image",
   upload.single("image"),
   async (req, res) => {
-    console.log(req.body);
-
     const productID = req.body.product_id;
     if (!productID) return res.status(400).send(`Required product id`);
     if (!req.file) return res.status(400).send(`Required product image`);
